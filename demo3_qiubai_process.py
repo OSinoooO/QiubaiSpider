@@ -104,7 +104,7 @@ class QiuBaiSpider(object):
         process_list.append(ti_save_item)
 
         for p in process_list:
-            p.setDaemon(True)  # 设置守护线程
+            p.daemon = True  # 设置守护线程
             p.start()
 
         for q in [self.url_queue, self.resp_queue, self.item_queue]:
